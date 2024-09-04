@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shopping_activity_bottom_navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+  <fragment
+      android:id="@+id/cartFragment"
+      android:name="com.example.shoppingapp.shoppingActivityFragments.CartFragment"
+      android:label="CartFragment">
+
+    <action
+        android:id="@+id/action_cartFragment_to_productsDetailsFragment"
+        app:destination="@id/productsDetailsFragment" />
+    <action
+        android:id="@+id/action_cartFragment_to_billingFragment"
+        app:destination="@id/billingFragment" />
+
+  </fragment>
+  <fragment
+      android:id="@+id/profileFragment"
+      android:name="com.example.shoppingapp.shoppingActivityFragments.ProfileFragment"
+      android:label="ProfileFragment">
+    <action
+        android:id="@+id/action_profileFragment_to_addressFragment"
+        app:destination="@id/addressFragment" />
+    <action
+        android:id="@+id/action_profileFragment_to_userAccountFragment"
+        app:destination="@id/userAccountFragment" />
+    <action
+        android:id="@+id/action_profileFragment_to_billingFragment"
+        app:destination="@id/billingFragment" />
+    <argument
+        android:name="TotalPrice"
+        app:argType="float" />
+    <argument
+        android:name="cartProducts"
+        app:argType="com.example.shoppingapp.data.CartProduct[]" />
+   
+    <action
+        android:id="@+id/action_profileFragment_to_allOrdersFragment"
+        app:destination="@id/allOrdersFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/searchFragment"
+      android:name="com.example.shoppingapp.shoppingActivityFragments.SearchFragment"
+      android:label="SearchFragment">
+    <action
+        android:id="@+id/action_searchFragment_to_productsDetailsFragment"
+        app:destination="@id/productsDetailsFragment" />
+
+  </fragment>
+  <fragment
+      android:id="@+id/homeFragment"
+      android:name="com.example.shoppingapp.shoppingActivityFragments.HomeFragment"
+      android:label="fragment_home2"
+      tools:layout="@layout/fragment_home2">
+    <action
+        android:id="@+id/action_homeFragment_to_productsDetailsFragment"
+        app:destination="@id/productsDetailsFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/productsDetailsFragment"
+      android:name="com.example.shoppingapp.shoppingActivityFragments.ProductsDetailsFragment"
+      android:label="ProductsDetailsFragment">
+    <argument
+        android:name="product"
+        app:argType="com.example.shoppingapp.data.Product" />
+  </fragment>
+  <fragment
+      android:id="@+id/addressFragment"
+      android:name="com.example.shoppingapp.fragments.AddressFragment"
+      android:label="AddressFragment" >
+    <argument
+        android:name="address"
+        app:argType="com.example.shoppingapp.data.Address"
+        app:nullable="true"
+        android:defaultValue="@null" />
+  </fragment>
+  <fragment
+      android:id="@+id/billingFragment"
+      android:name="com.example.shoppingapp.fragments.BillingFragment"
+      android:label="BillingFragment">
+    <argument
+        android:name="TotalPrice"
+        app:argType="float" />
+
+    <argument
+        android:name="cartProducts"
+        app:argType="com.example.shoppingapp.data.CartProduct[]" />
+    <argument
+        android:name="payment"
+        app:argType="boolean" />
+
+    <action
+        android:id="@+id/action_billingFragment_to_addressFragment"
+        app:destination="@id/addressFragment" />
+
+  </fragment>
+  <fragment
+      android:id="@+id/userAccountFragment"
+      android:name="com.example.shoppingapp.fragments.settings.UserAccountFragment"
+      android:label="UserAccountFragment" />
+  <fragment
+      android:id="@+id/allOrdersFragment"
+      android:name="com.example.shoppingapp.fragments.settings.AllOrdersFragment"
+      android:label="AllOrdersFragment">
+    <action
+        android:id="@+id/action_allOrdersFragment_to_orderDetailsFragment"
+        app:destination="@id/orderDetailsFragment" />
+    <argument
+        android:name="order"
+        app:argType="com.example.shoppingapp.data.order.Order" />
+  </fragment>
+  <fragment
+      android:id="@+id/orderDetailsFragment"
+      android:name="com.example.shoppingapp.fragments.settings.OrderDetailsFragment"
+      android:label="OrderDetailsFragment">
+    <argument
+        android:name="order"
+        app:argType="com.example.shoppingapp.data.order.Order" />
+  </fragment>
+</navigation>

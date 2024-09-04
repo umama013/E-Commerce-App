@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+  <ImageView
+      android:id="@+id/imageShadow"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:visibility="invisible"
+      android:src="#BBD9FA">
+
+  </ImageView>
+  <ImageView
+      android:id="@+id/colorImage"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      app:layout_constraintStart_toStartOf="@id/imageShadow"
+      app:layout_constraintTop_toTopOf="@id/imageShadow"
+      android:src="@color/g_gray500"
+      app:layout_constraintEnd_toEndOf="@id/imageShadow"
+      app:layout_constraintBottom_toBottomOf="@id/imageShadow">
+
+  </ImageView>
+  <TextView
+      android:id="@+id/selected_size"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:textSize="12sp"
+      android:textColor="@color/white"
+      tools:text = "M"
+      android:gravity="center"
+      app:layout_constraintStart_toStartOf="@id/colorImage"
+      app:layout_constraintEnd_toEndOf="@id/colorImage"
+      app:layout_constraintTop_toTopOf="@id/colorImage"
+      app:layout_constraintBottom_toBottomOf="@id/colorImage">
+
+  </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
